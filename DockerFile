@@ -1,6 +1,6 @@
 # Stage 1: Build the Spring Boot application
 # Use a valid OpenJDK 21 JDK slim image tag
-FROM openjdk:21-jdk-slim as build # Changed from 21-jdk-slim-buster to 21-jdk-slim
+FROM openjdk:21-jdk-slim as build
 
 # Set the working directory inside the build container
 WORKDIR /app
@@ -20,7 +20,7 @@ RUN ./gradlew clean bootJar -x test --no-daemon
 
 # Stage 2: Create the final production image
 # Use a valid OpenJDK 21 JRE slim image tag
-FROM openjdk:21-jre-slim # Changed from 21-jre-slim-buster to 21-jre-slim
+FROM openjdk:21-jre-slim
 
 # Set the working directory for the final container
 WORKDIR /app
