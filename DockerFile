@@ -1,6 +1,6 @@
 # Stage 1: Build the Spring Boot application
 # Use OpenJDK 21 JDK slim image based on 'bookworm'
-FROM openjdk:21-jdk-slim-bookworm as build # Changed to -slim-bookworm
+FROM openjdk:21-jdk-slim-bookworm as build
 
 # Set the working directory inside the build container
 WORKDIR /app
