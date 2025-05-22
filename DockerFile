@@ -20,8 +20,7 @@ RUN ./gradlew clean bootJar -x test --no-daemon
 
 # Stage 2: Create the final production image
 # Use OpenJDK 21 JRE slim image based on 'bookworm'
-FROM openjdk:21-jre-slim-bookworm # Changed to -slim-bookworm
-
+FROM openjdk:21-jre-slim-bookworm
 # Set the working directory for the final container
 WORKDIR /app
 
