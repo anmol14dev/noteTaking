@@ -1,1 +1,1 @@
-A dummy kotlin spring boot project
+Kotlin SpringBoot Project
