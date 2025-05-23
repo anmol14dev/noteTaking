@@ -1,6 +1,6 @@
 # Stage 1: Build the Spring Boot application
-# Use OpenJDK 21 JDK slim image based on 'bookworm'
-FROM openjdk:21-jdk-slim-bookworm as build
+# Use Eclipse Temurin OpenJDK 21 JDK slim image based on 'jammy' (Ubuntu 22.04 LTS)
+FROM eclipse-temurin:21-jdk-jammy as build
 
 # Set the working directory inside the build container
 WORKDIR /app
@@ -19,8 +19,9 @@ RUN chmod +x ./gradlew
 RUN ./gradlew clean bootJar -x test --no-daemon
 
 # Stage 2: Create the final production image
-# Use OpenJDK 21 JRE slim image based on 'bookworm'
-FROM openjdk:21-jre-slim-bookworm
+# Use Eclipse Temurin OpenJDK 21 JRE slim image based on 'jammy'
+FROM eclipse-temurin:21-jre-jammy
+
 # Set the working directory for the final container
 WORKDIR /app
 
